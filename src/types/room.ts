@@ -1,14 +1,16 @@
-export enum RoomCategory {
-  FINANCE = "finance",
-  ENTERTAINMENT = "entertainment",
-  FOOD = "food",
-  SPORTS = "sports",
-  TECHNOLOGY = "technology",
-  MUSIC = "music",
-  TRAVEL = "travel",
-  TAROT = "tarot",
-  BETTING = "betting",
-}
+export const RoomCategory = {
+  FINANCE: "finance",
+  ENTERTAINMENT: "entertainment",
+  FOOD: "food",
+  SPORTS: "sports",
+  TECHNOLOGY: "technology",
+  MUSIC: "music",
+  TRAVEL: "travel",
+  TAROT: "tarot",
+  BETTING: "betting",
+} as const
+
+export type RoomCategory = (typeof RoomCategory)[keyof typeof RoomCategory]
 
 export const CategoryMeta: Record<RoomCategory, { label: string; emoji: string }> = {
   [RoomCategory.FINANCE]: { label: "Finance", emoji: "\u{1F4B0}" },
@@ -46,10 +48,12 @@ export interface Room {
   participants: Participant[]
 }
 
-export enum VoteType {
-  KEEP = "keep",
-  PASS = "pass",
-}
+export const VoteType = {
+  KEEP: "keep",
+  PASS: "pass",
+} as const
+
+export type VoteType = (typeof VoteType)[keyof typeof VoteType]
 
 export interface Vote {
   userId: number
@@ -58,14 +62,16 @@ export interface Vote {
   createdAt: number
 }
 
-export enum SpeakerPhase {
-  TALKING = "talking",
-  VOTING = "voting",
-  DECIDING = "deciding",
-  RESULT_KEEP = "result_keep",
-  RESULT_PASS = "result_pass",
-  WAITING = "waiting",
-}
+export const SpeakerPhase = {
+  TALKING: "talking",
+  VOTING: "voting",
+  DECIDING: "deciding",
+  RESULT_KEEP: "result_keep",
+  RESULT_PASS: "result_pass",
+  WAITING: "waiting",
+} as const
+
+export type SpeakerPhase = (typeof SpeakerPhase)[keyof typeof SpeakerPhase]
 
 export interface RoomUiState {
   room: Room

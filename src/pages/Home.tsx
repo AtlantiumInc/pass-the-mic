@@ -1,4 +1,4 @@
-import { Mic, Users, Timer, ThumbsUp, ThumbsDown, Shield, ChevronRight, Smartphone, ArrowRight, Zap, Volume2 } from "lucide-react"
+import { Mic, Users, Timer, ThumbsUp, ThumbsDown, Shield, ChevronRight, Smartphone, Zap } from "lucide-react"
 
 const features = [
   {
@@ -203,7 +203,7 @@ export default function Home() {
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((step, i) => (
+          {steps.map((step) => (
             <div
               key={step.num}
               className="rounded-2xl p-6 relative overflow-hidden transition-transform hover:scale-[1.02]"
